@@ -1,4 +1,4 @@
-{{- if .Values.flux.flagger.enabled -}}
+{{- if default false .Values.flux.flagger.enabled -}}
 {{- $fullName := include "standard-application.fullname" . -}}
 ## Flux Flagger
 ## Source: https://github.com/fluxcd/flagger

@@ -279,7 +279,7 @@ automountServiceAccountToken: true
 flux:
   flagger:
     enabled: false
-    apiVersion: flagger.app/v1beta1
+    apiVersion: flagger.app/v1
     spec:
       targetRef:
         apiVersion: apps/v1

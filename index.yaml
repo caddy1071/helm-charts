@@ -3,9 +3,9 @@ entries:
   query-exporter:
   - apiVersion: v1
     appVersion: 2.7.0
-    created: "2024-02-27T16:58:27.359784204-06:00"
+    created: "2024-02-28T14:39:40.443016571-06:00"
     description: A Helm chart for Kubernetes to run query-exporter
-    digest: 9f70d38858b445a3d93141ea4fdd8c553213c6b5209c1a29ebed11ba9e25f226
+    digest: 7d3ad7da3c73e0da4a9dec835ad8b863a087cd853f5ac5a0ba684b08c1f8c416
     home: https://github.com/albertodonato/query-exporter
     icon: https://helm.sh/img/helm-logo.svg
     keywords:
@@ -18,9 +18,9 @@ entries:
   renovate:
   - apiVersion: v1
     appVersion: 19.239.11
-    created: "2024-02-27T16:58:27.360200216-06:00"
+    created: "2024-02-28T14:39:40.443439087-06:00"
     description: Universal dependency update tool that fits into your workflows.
-    digest: 5fd9a49e3a7cda426e420bdaf70bcb8d8b9b20aa2a031e90256e9b061306da74
+    digest: 2fe01c79f8f71c266d907623d9f9d29b5f4c7983a90cdf12d1163cb8a95f83c9
     home: https://github.com/renovatebot/renovate
     icon: https://docs.renovatebot.com/assets/images/logo.png
     keywords:
@@ -40,12 +40,12 @@ entries:
   standard-application:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-02-27T16:58:27.360619331-06:00"
+    created: "2024-02-28T14:39:40.443817472-06:00"
     description: A Helm chart for Kubernetes
-    digest: 409df3ccbd681268c7dfcfeb7fdd2520a510ed9e9f1709930c4f592d0e27d9c2
+    digest: 9359733738ac80a75d74b513b5b5ee20cc6627855c48b795b5c50c09228c5774
     name: standard-application
     type: application
     urls:
     - https://caddy1071.github.io/helm-charts/standard-application-0.1.0.tgz
     version: 0.1.0
-generated: "2024-02-27T16:58:27.359185765-06:00"
+generated: "2024-02-28T14:39:40.44219018-06:00"

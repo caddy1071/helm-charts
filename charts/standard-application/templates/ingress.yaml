@@ -1,4 +1,4 @@
-{{- if default false .Values.ingress.enabled -}}
+{{- if default false .Values.ingress.enabled }}
 {{- $fullName := include "standard-application.fullname" . -}}
 {{- $svcPort := .Values.service.port -}}
 {{- $ingressPaths := .Values.ingress.http.paths -}}
@@ -44,7 +44,7 @@ spec:
               backend:
                 {{- if semverCompare ">=1.19-0" $.Capabilities.KubeVersion.GitVersion }}
                 service:
-                 name: {{ $fullName }}
+                  name: {{ $fullName }}
                   port:
                     number: {{ $svcPort }}
                 {{- else }}

@@ -46,7 +46,6 @@ spec:
 
 
       {{- if .Values.deployment.enableInitContainer }}
-      # enabling initContainer(s)
       initContainers:
 {{ toYaml .Values.deployment.initContainers | indent 8 }}
       {{- end }}
@@ -54,7 +53,6 @@ spec:
       containers:
 
         {{- range $index, $container := .Values.deployment.containers }}
-        # Container {{ $index }} - {{ $container.name }}
         - name: {{ $container.name }}
           image: "{{ $container.image.repository }}:{{ $container.image.tag }}"
           imagePullPolicy: {{ $container.image.pullPolicy }}
@@ -71,11 +69,9 @@ spec:
           {{- if or (gt (len $container.env.base) 0) (gt (len $container.env.perEnv) 0) }}
           env:
           {{- if gt (len $container.env.base) 0 }}
-          # base
 {{ toYaml $container.env.base | indent 10 }}
           {{- end }}
           {{- if gt (len $container.env.perEnv) 0 }}
-          # perEnv
 {{ toYaml $container.env.perEnv | indent 10 }}
           {{- end }}
           {{- end }}
@@ -85,17 +81,14 @@ spec:
 {{ toYaml $container.envFrom | indent 10 }}
           {{- end }}
 
-          # START: ports
           {{- if $container.ports }}
           ports:
           {{- range $index, $item := $container.ports }}
-          # Port {{ $index }}
           - containerPort: {{ $item.containerPort }}
             protocol: {{ $item.protocol }}
             name: {{ $item.name }}
           {{- end }}
           {{- end }}
-          # END: ports
           {{- if $container.livenessProbe }}
           livenessProbe:
 {{ toYaml $container.livenessProbe | indent 12 }}
@@ -111,7 +104,6 @@ spec:
             {{- toYaml $container.securityContext | nindent 12 }}
 
           {{- if $container.volumeMounts }}
-          # volumeMounts
           volumeMounts:
 {{ toYaml $container.volumeMounts | indent 12 }}
           {{- end }}
@@ -140,14 +132,12 @@ spec:
     {{- end }}
 
       {{- with .Values.volumes }}
-      # Volumes
       volumes:
 {{- toYaml . | nindent 8 }}
       {{- end }}
 
 
   {{- with .Values.volumeClaimTemplates }}
-  # volumeClaimTemplates
   volumeClaimTemplates:
 {{- toYaml . | nindent 2 }}
       {{- end }}

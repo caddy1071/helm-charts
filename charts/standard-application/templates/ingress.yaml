@@ -2,8 +2,6 @@
 {{- $fullName := include "standard-application.fullname" . -}}
 {{- $ingressPaths := .Values.ingress.paths -}}
 {{- if .Values.ingress.ingressClass.enabled -}}
-
-#IngressClass
 ---
 apiVersion: networking.k8s.io/v1
 kind: IngressClass
@@ -14,8 +12,6 @@ spec:
     {{- toYaml . | nindent 2 }}
   {{- end }}
 {{- end }}
-
-#Ingress
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress

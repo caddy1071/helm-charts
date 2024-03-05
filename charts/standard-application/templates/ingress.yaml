@@ -30,9 +30,7 @@ metadata:
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
-
   {{- end }}
-
 spec:
   ingressClassName: {{ $fullName }}
 {{- if .Values.ingress.tls }}

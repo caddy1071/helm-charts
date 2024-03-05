@@ -1,4 +1,4 @@
-{{- if default false .Values.statefulset.enabled }}
+{{- if .Values.statefulset.enable }}
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -33,7 +33,7 @@ spec:
       labels:
         app.selector: {{ include "standard-application.fullname" . }}
         {{- if .Values.labels }}
-{{ toYaml .Values.labels | indent 8 }}
+{{ toYaml .Values.labels | indent 8 }}:w
         {{- end }}
     spec:
       {{- if .Values.serviceaccount.enabled }}

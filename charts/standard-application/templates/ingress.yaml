@@ -1,9 +1,12 @@
 {{- if .Values.ingress.enabled -}}
 {{- $fullName := include "standard-application.fullname" . -}}
 {{- $ingressPaths := .Values.ingress.paths -}}
+
 {{- if .Values.ingress.ingressClass.enabled -}}
+# Ingress class
+# docs: https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-class
 ---
-apiVersion: networking.k8s.io/v1
+apiVersion: networking.k8s.io/v1beta1
 kind: IngressClass
 metadata:
   name: {{ $fullName }}
@@ -12,6 +15,8 @@ spec:
     {{- toYaml . | nindent 2 }}
   {{- end }}
 {{- end }}
+
+# Ingress
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -26,7 +31,9 @@ metadata:
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
+
   {{- end }}
+
 spec:
   ingressClassName: {{ $fullName }}
 {{- if .Values.ingress.tls }}

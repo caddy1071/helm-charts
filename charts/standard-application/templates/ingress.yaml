@@ -2,7 +2,7 @@
 {{- $fullName := include "standard-application.fullname" . -}}
 {{- $ingressPaths := .Values.ingress.paths -}}
 
-{{- if .Values.ingress.ingressClass.enabled -}}
+{{- if default false .Values.ingress.ingressClass.enabled -}}
 # Ingress class
 # docs: https://kubernetes.io/docs/concepts/services-networking/ingress/#ingress-class
 ---

@@ -33,7 +33,7 @@ spec:
       labels:
         app.selector: {{ include "standard-application.fullname" . }}
         {{- if .Values.labels }}
-{{ toYaml .Values.labels | indent 8 }}:w
+{{ toYaml .Values.labels | indent 8 }}
         {{- end }}
     spec:
       {{- if .Values.serviceaccount.enabled }}

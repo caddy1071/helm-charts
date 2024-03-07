@@ -1,4 +1,4 @@
-{{- if default .Values.istio.virtualService.enabled -}}
+{{- if .Values.istio.virtualService.enabled -}}
 {{- $fullName := include "standard-application.fullname" . -}}
 ---
 apiVersion: {{ .Values.istio.virtualService.apiVersion }}
